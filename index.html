@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="PUSH IT is a dedicated agency that exclusively focuses on representing Swedish influencers in fashion, interior design, beauty, and sports. We ensure high engagement and top-quality content.">
+        content="PUSH IT är en dedikerad byrå som uteslutande representerar svenska influencers inom mode, inredning, skönhet och sport. Vi säkerställer högt engagemang och innehåll av toppkvalitet.">
     <title>PUSH IT Agency</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +15,7 @@
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"></script>
 </head>
 
 <body>
@@ -28,15 +29,15 @@
 
                 <nav class="nav" id="nav">
                     <ul class="nav-list">
-                        <li><a href="#creators" class="nav-link">CREATORS</a></li>
-                        <li><a href="#about" class="nav-link">ABOUT US</a></li>
-                        <li><a href="#apply" class="nav-link">APPLY NOW</a></li>
+                        <li><a href="#creators" class="nav-link" data-i18n="nav.creators">KREATÖRER</a></li>
+                        <li><a href="#about" class="nav-link" data-i18n="nav.about">OM OSS</a></li>
+                        <li><a href="#apply" class="nav-link" data-i18n="nav.apply">ANSÖK NU</a></li>
                     </ul>
                 </nav>
 
                 <div class="header-actions">
-                    <a href="#contact" class="btn-link">Contact us</a>
-                    <a href="#login" class="btn-login">Log in</a>
+                    <a href="#contact" class="btn-link" data-i18n="nav.contact">Kontakta oss</a>
+                    <a href="#login" class="btn-login" data-i18n="nav.login">Logga in</a>
                 </div>
 
                 <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
@@ -52,11 +53,11 @@
     <div class="mobile-menu" id="mobileMenu">
         <nav class="mobile-nav">
             <ul class="mobile-nav-list">
-                <li><a href="#creators" class="mobile-nav-link">CREATORS</a></li>
-                <li><a href="#about" class="mobile-nav-link">ABOUT US</a></li>
-                <li><a href="#apply" class="mobile-nav-link">APPLY NOW</a></li>
-                <li><a href="#contact" class="mobile-nav-link">Contact us</a></li>
-                <li><a href="#login" class="mobile-nav-link">Log in</a></li>
+                <li><a href="#creators" class="mobile-nav-link" data-i18n="nav.creators">KREATÖRER</a></li>
+                <li><a href="#about" class="mobile-nav-link" data-i18n="nav.about">OM OSS</a></li>
+                <li><a href="#apply" class="mobile-nav-link" data-i18n="nav.apply">ANSÖK NU</a></li>
+                <li><a href="#contact" class="mobile-nav-link" data-i18n="nav.contact">Kontakta oss</a></li>
+                <li><a href="#login" class="mobile-nav-link" data-i18n="nav.login">Logga in</a></li>
             </ul>
         </nav>
     </div>
@@ -69,9 +70,84 @@
         <div class="hero-overlay"></div>
         <div class="container">
             <h1 class="hero-title fade-in">
-                <span class="hero-title-line">Sveriges största pool av</span>
-                <span class="hero-title-line">Kreatörer</span>
+                <span class="hero-title-line">You create.</span>
+                <span class="hero-title-line">We push it.</span>
             </h1>
+            <div class="lang-toggle" aria-label="Välj språk">
+                <button class="lang-btn is-active" type="button" data-lang="sv" aria-pressed="true">
+                    <span role="img" aria-hidden="true">🇸🇪</span>
+                    <span class="sr-only">Svenska</span>
+                </button>
+                <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">
+                    <span role="img" aria-hidden="true">🇬🇧</span>
+                    <span class="sr-only">English</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audience Selector -->
+    <section class="audience-selector fade-in-scroll" id="audience">
+        <div class="container">
+            <div class="audience-card">
+                <div class="audience-header">
+                    <h2 class="audience-title" data-i18n="audience.title">Välj din väg</h2>
+                    <p class="audience-subtitle" data-i18n="audience.subtitle">Är du kreatör eller ett företag som
+                        söker influencer-marknadsföring?</p>
+                </div>
+
+                <div class="audience-tabs" role="tablist" aria-label="Välj målgrupp">
+                    <button class="audience-tab is-active" type="button" role="tab" aria-selected="true"
+                        aria-controls="audience-panel-creators" id="audience-tab-creators" data-audience="creators"
+                        data-i18n="audience.tab.creators">
+                        Jag är kreatör
+                    </button>
+                    <button class="audience-tab" type="button" role="tab" aria-selected="false"
+                        aria-controls="audience-panel-companies" id="audience-tab-companies" data-audience="companies"
+                        data-i18n="audience.tab.companies">
+                        För företag
+                    </button>
+                </div>
+
+                <div class="audience-panels">
+                    <div class="audience-panel is-active" role="tabpanel" tabindex="0" id="audience-panel-creators"
+                        aria-labelledby="audience-tab-creators" data-audience-panel="creators">
+                        <ul class="audience-list">
+                            <li>
+                                <div class="audience-list-text" data-i18n="audience.creators.money">Tjäna pengar på din
+                                    kreativitet</div>
+                                <div class="audience-lottie" aria-hidden="true">
+                                    <dotlottie-player src="Money.lottie" background="transparent" speed="1" loop
+                                        autoplay></dotlottie-player>
+                                </div>
+                                <p class="audience-lottie-caption" data-i18n="audience.creators.caption">Gör ditt
+                                    inflytande till inkomst – varumärken betalar
+                                    för innehåll som träffar rätt.</p>
+                            </li>
+                            <li>
+                                <div class="audience-list-text" data-i18n="audience.creators.apply">Ansök till vårt
+                                    team nu</div>
+                                <div class="audience-lottie" aria-hidden="true">
+                                    <dotlottie-player src="orange hearts.lottie" background="transparent" speed="1"
+                                        loop autoplay></dotlottie-player>
+                                </div>
+                                <p class="audience-lottie-caption" data-i18n="audience.creators.applyCaption">Gå med i
+                                    PUSH IT och matchas med betalda kampanjer
+                                    som passar din stil.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="audience-panel" role="tabpanel" tabindex="0" id="audience-panel-companies"
+                        aria-labelledby="audience-tab-companies" hidden data-audience-panel="companies">
+                        <ul class="audience-list">
+                            <li data-i18n="audience.companies.get">Hitta rätt influencer och marknadsför dina produkter
+                            </li>
+                            <li data-i18n="audience.companies.contact">Kontakta oss för mer info</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -85,7 +161,7 @@
                         <img src="assets/images/creator-1.jpg" alt="Modell 1">
                         <div class="creator-overlay">
                             <span class="creator-x">X</span>
-                            <span class="creator-cta">View profile</span>
+                            <span class="creator-cta" data-i18n="creator.view">Visa profil</span>
                         </div>
                     </div>
                     <h3 class="creator-name">MODELL 1</h3>
@@ -97,7 +173,7 @@
                         <img src="assets/images/creator-3.jpg" alt="modell 2">
                         <div class="creator-overlay">
                             <span class="creator-x">X</span>
-                            <span class="creator-cta">View profile</span>
+                            <span class="creator-cta" data-i18n="creator.view">Visa profil</span>
                         </div>
                     </div>
                     <h3 class="creator-name">modell 2</h3>
@@ -109,7 +185,7 @@
                         <img src="assets/images/creator-4.jpg" alt="Modell 3">
                         <div class="creator-overlay">
                             <span class="creator-x">X</span>
-                            <span class="creator-cta">View profile</span>
+                            <span class="creator-cta" data-i18n="creator.view">Visa profil</span>
                         </div>
                     </div>
                     <h3 class="creator-name">Modell 3</h3>
@@ -121,7 +197,7 @@
                         <img src="assets/images/creator-5.jpg" alt="Modell 4">
                         <div class="creator-overlay">
                             <span class="creator-x">X</span>
-                            <span class="creator-cta">View profile</span>
+                            <span class="creator-cta" data-i18n="creator.view">Visa profil</span>
                         </div>
                     </div>
                     <h3 class="creator-name">Modell 4</h3>
@@ -133,7 +209,7 @@
                         <img src="assets/images/creator-6.jpg" alt="Mica Eriksson">
                         <div class="creator-overlay">
                             <span class="creator-x">X</span>
-                            <span class="creator-cta">View profile</span>
+                            <span class="creator-cta" data-i18n="creator.view">Visa profil</span>
                         </div>
                     </div>
                     <h3 class="creator-name">MICA ERIKSSON</h3>
@@ -142,9 +218,44 @@
                 <!-- See All Card -->
                 <div class="creator-card creator-card-cta fade-in-scroll">
                     <a href="#all-creators" class="creator-see-all">
-                        <span class="creator-see-all-text">See all our creators</span>
+                        <span class="creator-see-all-text" data-i18n="creator.seeAll">Se alla våra kreatörer</span>
                     </a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section class="sponsors fade-in-scroll" id="sponsors">
+        <div class="container">
+            <h2 class="section-title" data-i18n="sponsors.title">SPONSORER</h2>
+            <p class="section-subtitle" data-i18n="sponsors.subtitle">Varumärken vi samarbetat med</p>
+        </div>
+
+        <div class="clients-marquee" aria-label="Sponsorer loggor i loop" data-i18n-label="sponsors.aria">
+            <div class="clients-track">
+                <div class="client-logo"><img src="logoloop/Airbnb%20copy.svg" alt="Airbnb"></div>
+                <div class="client-logo"><img src="logoloop/Amazon%20copy.svg" alt="Amazon"></div>
+                <div class="client-logo"><img src="logoloop/Disney%20copy.svg" alt="Disney"></div>
+                <div class="client-logo"><img src="logoloop/Google%20copy.svg" alt="Google"></div>
+                <div class="client-logo"><img src="logoloop/Microsoft%20copy.svg" alt="Microsoft"></div>
+                <div class="client-logo"><img src="logoloop/Netflix%20copy.svg" alt="Netflix"></div>
+                <div class="client-logo"><img src="logoloop/Nike%20copy.svg" alt="Nike"></div>
+                <div class="client-logo"><img src="logoloop/Spotify%20copy.svg" alt="Spotify"></div>
+                <div class="client-logo"><img src="logoloop/TikTok%20copy.svg" alt="TikTok"></div>
+                <div class="client-logo"><img src="logoloop/Uber%20copy.svg" alt="Uber"></div>
+
+                <!-- Duplicate for seamless loop -->
+                <div class="client-logo"><img src="logoloop/Airbnb%20copy.svg" alt="Airbnb"></div>
+                <div class="client-logo"><img src="logoloop/Amazon%20copy.svg" alt="Amazon"></div>
+                <div class="client-logo"><img src="logoloop/Disney%20copy.svg" alt="Disney"></div>
+                <div class="client-logo"><img src="logoloop/Google%20copy.svg" alt="Google"></div>
+                <div class="client-logo"><img src="logoloop/Microsoft%20copy.svg" alt="Microsoft"></div>
+                <div class="client-logo"><img src="logoloop/Netflix%20copy.svg" alt="Netflix"></div>
+                <div class="client-logo"><img src="logoloop/Nike%20copy.svg" alt="Nike"></div>
+                <div class="client-logo"><img src="logoloop/Spotify%20copy.svg" alt="Spotify"></div>
+                <div class="client-logo"><img src="logoloop/TikTok%20copy.svg" alt="TikTok"></div>
+                <div class="client-logo"><img src="logoloop/Uber%20copy.svg" alt="Uber"></div>
             </div>
         </div>
     </section>
@@ -153,8 +264,8 @@
     <section class="collaborations fade-in-scroll">
         <div class="container">
             <div class="collaborations-header">
-                <h2 class="section-title">COLLABORATIONS</h2>
-                <p class="section-subtitle">Our latest partnerships with our talented PUSH IT creators</p>
+                <h2 class="section-title" data-i18n="collabs.title">SAMARBETEN</h2>
+                <p class="section-subtitle" data-i18n="collabs.subtitle">Våra senaste samarbeten med våra PUSH IT-kreatörer</p>
             </div>
         </div>
 
@@ -166,7 +277,7 @@
                         <img src="assets/images/collab-1.jpg" alt="Moei Al Debis">
                         <div class="collaboration-overlay">
                             <span class="collaboration-x">X</span>
-                            <span class="collaboration-cta">View profile</span>
+                            <span class="collaboration-cta" data-i18n="creator.view">Visa profil</span>
                         </div>
                     </div>
                     <p class="collaboration-name">MOEI AL DEBIS</p>
@@ -178,7 +289,7 @@
                         <img src="assets/images/collab-2.jpg" alt="Emelie Von Hofsten">
                         <div class="collaboration-overlay">
                             <span class="collaboration-x">X</span>
-                            <span class="collaboration-cta">View profile</span>
+                            <span class="collaboration-cta" data-i18n="creator.view">Visa profil</span>
                         </div>
                     </div>
                     <p class="collaboration-name">EMELIE VON HOFSTEN</p>
@@ -190,7 +301,7 @@
                         <img src="assets/images/collab-4.jpg" alt="Kajsa Larsson">
                         <div class="collaboration-overlay">
                             <span class="collaboration-x">X</span>
-                            <span class="collaboration-cta">View profile</span>
+                            <span class="collaboration-cta" data-i18n="creator.view">Visa profil</span>
                         </div>
                     </div>
                     <p class="collaboration-name">KAJSA LARSSON</p>
@@ -202,7 +313,7 @@
                         <img src="assets/images/collab-5.jpg" alt="Louisa Falkenberg">
                         <div class="collaboration-overlay">
                             <span class="collaboration-x">X</span>
-                            <span class="collaboration-cta">View profile</span>
+                            <span class="collaboration-cta" data-i18n="creator.view">Visa profil</span>
                         </div>
                     </div>
                     <p class="collaboration-name">LOUISA FALKENBERG</p>
@@ -214,7 +325,7 @@
                         <img src="assets/images/collab-6.jpg" alt="Modell 1">
                         <div class="collaboration-overlay">
                             <span class="collaboration-x">X</span>
-                            <span class="collaboration-cta">View profile</span>
+                            <span class="collaboration-cta" data-i18n="creator.view">Visa profil</span>
                         </div>
                     </div>
                     <p class="collaboration-name">MODELL 1</p>
@@ -226,29 +337,29 @@
     <!-- Our Clients Section -->
     <section class="clients fade-in-scroll">
         <div class="container">
-            <h2 class="section-title">OUR CLIENTS</h2>
-            <p class="section-subtitle">Our latest collaborative partners</p>
+            <h2 class="section-title" data-i18n="clients.title">VÅRA KUNDER</h2>
+            <p class="section-subtitle" data-i18n="clients.subtitle">Våra senaste partners</p>
         </div>
 
         <div class="clients-marquee">
             <div class="clients-track">
-                <div class="client-logo"><img src="assets/images/client-1.png" alt="Client Logo"></div>
-                <div class="client-logo"><img src="assets/images/client-2.png" alt="Client Logo"></div>
-                <div class="client-logo"><img src="assets/images/client-3.png" alt="Client Logo"></div>
-                <div class="client-logo"><img src="assets/images/client-4.png" alt="Client Logo"></div>
-                <div class="client-logo"><img src="assets/images/client-5.png" alt="Client Logo"></div>
-                <div class="client-logo"><img src="assets/images/client-6.png" alt="Client Logo"></div>
-                <div class="client-logo"><img src="assets/images/client-7.png" alt="Client Logo"></div>
-                <div class="client-logo"><img src="assets/images/client-8.png" alt="Client Logo"></div>
+                <div class="client-logo"><img src="assets/images/client-1.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
+                <div class="client-logo"><img src="assets/images/client-2.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
+                <div class="client-logo"><img src="assets/images/client-3.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
+                <div class="client-logo"><img src="assets/images/client-4.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
+                <div class="client-logo"><img src="assets/images/client-5.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
+                <div class="client-logo"><img src="assets/images/client-6.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
+                <div class="client-logo"><img src="assets/images/client-7.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
+                <div class="client-logo"><img src="assets/images/client-8.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
                 <!-- Duplicate for seamless loop -->
-                <div class="client-logo"><img src="assets/images/client-1.png" alt="Client Logo"></div>
-                <div class="client-logo"><img src="assets/images/client-2.png" alt="Client Logo"></div>
-                <div class="client-logo"><img src="assets/images/client-3.png" alt="Client Logo"></div>
-                <div class="client-logo"><img src="assets/images/client-4.png" alt="Client Logo"></div>
-                <div class="client-logo"><img src="assets/images/client-5.png" alt="Client Logo"></div>
-                <div class="client-logo"><img src="assets/images/client-6.png" alt="Client Logo"></div>
-                <div class="client-logo"><img src="assets/images/client-7.png" alt="Client Logo"></div>
-                <div class="client-logo"><img src="assets/images/client-8.png" alt="Client Logo"></div>
+                <div class="client-logo"><img src="assets/images/client-1.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
+                <div class="client-logo"><img src="assets/images/client-2.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
+                <div class="client-logo"><img src="assets/images/client-3.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
+                <div class="client-logo"><img src="assets/images/client-4.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
+                <div class="client-logo"><img src="assets/images/client-5.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
+                <div class="client-logo"><img src="assets/images/client-6.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
+                <div class="client-logo"><img src="assets/images/client-7.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
+                <div class="client-logo"><img src="assets/images/client-8.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
             </div>
         </div>
     </section>
@@ -256,33 +367,31 @@
     <!-- What We Do Section -->
     <section class="what-we-do fade-in-scroll" id="about">
         <div class="container">
-            <div class="what-we-do-header">
-                <h2 class="section-title">WHAT WE DO</h2>
-                <p class="what-we-do-intro">PUSH IT is a dedicated agency that exclusively focuses on representing
-                    Swedish
-                    influencers in fashion, interior design, beauty, and sports. We ensure high engagement and
-                    top-quality content.</p>
-                <a href="#about" class="btn-primary">About us</a>
+                <div class="what-we-do-header">
+                    <h2 class="section-title" data-i18n="what.title">DET VI GÖR</h2>
+                    <p class="what-we-do-intro" data-i18n="what.body">PUSH IT är en dedikerad byrå som uteslutande representerar svenska
+                    influencers inom mode, inredning, skönhet och sport. Vi säkerställer högt engagemang och
+                    innehåll av toppkvalitet.</p>
+                <a href="#about" class="btn-primary" data-i18n="what.cta">Om oss</a>
             </div>
 
             <div class="services-grid">
                 <div class="service-card">
-                    <h3 class="service-title">Supportive Management & Community</h3>
-                    <p class="service-description">PUSH IT offers daily support, monthly updates, and strong
-                        relationships
-                        to help grow your brand and connect you with clients for lasting success.</p>
+                    <h3 class="service-title" data-i18n="services.1.title">Stöttande management & community</h3>
+                    <p class="service-description" data-i18n="services.1.desc">PUSH IT erbjuder dagligt stöd, månatliga uppdateringar och starka
+                        relationer för att växa ditt varumärke och koppla ihop dig med kunder för långsiktig framgång.</p>
                 </div>
 
                 <div class="service-card">
-                    <h3 class="service-title">Structure</h3>
-                    <p class="service-description">Our personalized platform keeps your collaborations, deadlines, and
-                        agreements organized, letting you focus on creativity.</p>
+                    <h3 class="service-title" data-i18n="services.2.title">Struktur</h3>
+                    <p class="service-description" data-i18n="services.2.desc">Vår personliga plattform håller samarbeten, deadlines och avtal i
+                        ordning så att du kan fokusera på kreativiteten.</p>
                 </div>
 
                 <div class="service-card">
-                    <h3 class="service-title">Wide Network</h3>
-                    <p class="service-description">PUSH IT connects you with top clients in fashion, sport, beauty,
-                        interior, and food, expanding your opportunities for collaborations.</p>
+                    <h3 class="service-title" data-i18n="services.3.title">Brett nätverk</h3>
+                    <p class="service-description" data-i18n="services.3.desc">PUSH IT kopplar ihop dig med ledande kunder inom mode, sport,
+                        skönhet, inredning och mat, och breddar dina möjligheter till samarbeten.</p>
                 </div>
             </div>
         </div>
@@ -315,29 +424,30 @@
                 <div class="footer-col">
                     <nav class="footer-nav">
                         <ul class="footer-nav-list">
-                            <li><a href="#creators">CREATORS</a></li>
-                            <li><a href="#about">ABOUT US</a></li>
-                            <li><a href="#apply">APPLY NOW</a></li>
-                            <li><a href="#contact">CONTACT</a></li>
-                            <li><a href="#login">LOG IN</a></li>
+                            <li><a href="#creators" data-i18n="nav.creators">KREATÖRER</a></li>
+                            <li><a href="#about" data-i18n="nav.about">OM OSS</a></li>
+                            <li><a href="#apply" data-i18n="nav.apply">ANSÖK NU</a></li>
+                            <li><a href="#contact" data-i18n="nav.contact">KONTAKT</a></li>
+                            <li><a href="#login" data-i18n="nav.login">LOGGA IN</a></li>
                         </ul>
                     </nav>
                 </div>
 
                 <div class="footer-col footer-col-newsletter">
-                    <h4 class="footer-title">Newsletter</h4>
+                    <h4 class="footer-title" data-i18n="newsletter.title">Nyhetsbrev</h4>
                     <form class="newsletter-form" id="newsletterForm">
-                        <input type="email" placeholder="Your email address" class="newsletter-input" required>
-                        <button type="submit" class="newsletter-submit">Subscribe</button>
+                        <input type="email" placeholder="Din e-postadress" class="newsletter-input" required
+                            data-i18n-placeholder="newsletter.placeholder">
+                        <button type="submit" class="newsletter-submit" data-i18n="newsletter.button">Prenumerera</button>
                     </form>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <p class="footer-copyright">© PUSH IT AGENCY AB 2024</p>
-                <p class="footer-powered">Powered by <a href="https://www.webie.se/" target="_blank"
+                <p class="footer-powered"><span data-i18n="footer.powered">Drivs av</span> <a href="https://www.webie.se/" target="_blank"
                         rel="noopener">Webie</a></p>
-                <a href="#privacy" class="footer-privacy">Privacy & Cookies</a>
+                <a href="#privacy" class="footer-privacy" data-i18n="footer.privacy">Integritet & Cookies</a>
             </div>
         </div>
     </footer>
