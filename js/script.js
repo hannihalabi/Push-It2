@@ -7,7 +7,6 @@ const translations = {
     'nav.about': { sv: 'OM OSS', en: 'ABOUT US' },
     'nav.apply': { sv: 'ANSÖK NU', en: 'APPLY NOW' },
     'nav.contact': { sv: 'KONTAKTA OSS', en: 'CONTACT' },
-    'nav.login': { sv: 'LOGGA IN', en: 'LOG IN' },
     'audience.title': { sv: 'Välj din väg', en: 'Choose your path' },
     'audience.subtitle': {
         sv: 'Är du kreatör eller ett företag som söker influencer-marknadsföring?',
@@ -33,19 +32,14 @@ const translations = {
         sv: 'Kontakta oss för mer info',
         en: 'Contact us for information'
     },
+    'audience.companies.cta': { sv: 'Boka nu', en: 'Book now' },
     'creator.view': { sv: 'Visa profil', en: 'View profile' },
     'creator.seeAll': { sv: 'Se alla våra kreatörer', en: 'See all our creators' },
-    'sponsors.title': { sv: 'SPONSORER', en: 'SPONSORS' },
-    'sponsors.subtitle': { sv: 'Varumärken vi samarbetat med', en: 'Brands we’ve partnered with' },
-    'sponsors.aria': { sv: 'Sponsorer loggor i loop', en: 'Sponsors logo loop' },
     'collabs.title': { sv: 'SAMARBETEN', en: 'COLLABORATIONS' },
     'collabs.subtitle': {
         sv: 'Våra senaste samarbeten med våra PUSH IT-kreatörer',
         en: 'Our latest partnerships with our talented PUSH IT creators'
     },
-    'clients.title': { sv: 'VÅRA KUNDER', en: 'OUR CLIENTS' },
-    'clients.subtitle': { sv: 'Våra senaste partners', en: 'Our latest partners' },
-    'clients.alt': { sv: 'Kundlogotyp', en: 'Client logo' },
     'what.title': { sv: 'DET VI GÖR', en: 'WHAT WE DO' },
     'what.body': {
         sv: 'PUSH IT är en dedikerad byrå som uteslutande representerar svenska influencers inom mode, inredning, skönhet och sport. Vi säkerställer högt engagemang och innehåll av toppkvalitet.',
@@ -66,6 +60,11 @@ const translations = {
     'services.3.desc': {
         sv: 'PUSH IT kopplar ihop dig med ledande kunder inom mode, sport, skönhet, inredning och mat, och breddar dina möjligheter till samarbeten.',
         en: 'PUSH IT connects you with top clients in fashion, sport, beauty, interior, and food, expanding your opportunities for collaborations.'
+    },
+    'services.4.title': { sv: 'Strategi & kampanjplanering', en: 'Strategy & Campaign Planning' },
+    'services.4.desc': {
+        sv: 'Vi tar fram tydliga mål, kreativa koncept och tajta tidslinjer så att varje kampanj levererar maximalt genomslag.',
+        en: 'We craft clear goals, creative concepts, and tight timelines so each campaign delivers maximum impact.'
     },
     'newsletter.title': { sv: 'Nyhetsbrev', en: 'Newsletter' },
     'newsletter.placeholder': { sv: 'Din e-postadress', en: 'Your email address' },
@@ -283,7 +282,7 @@ function initVideoPlaylist() {
 
     if (!heroVideo) return;
 
-    const videoPlaylist = ['pushit1.mp4', 'pushit2.mp4', 'pushit3.mp4', 'pushit4.mp4'];
+    const videoPlaylist = ['pushit3.mp4', 'pushit1.mp4', 'pushit2.mp4', 'pushit4.mp4'];
     let currentVideoIndex = 0;
 
     heroVideo.addEventListener('ended', function () {
@@ -467,7 +466,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const href = this.getAttribute('href');
 
         // Skip if just "#"
-        if (href === '#' || href === '#login' || href === '#apply' || href === '#contact' || href === '#privacy') {
+        if (href === '#' || href === '#apply' || href === '#contact' || href === '#privacy') {
             e.preventDefault();
             return;
         }

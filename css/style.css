@@ -173,6 +173,7 @@ button {
     font-size: 1.125rem;
     font-weight: 700;
     letter-spacing: 0.15em;
+    white-space: nowrap;
 }
 
 .logo-sub {
@@ -194,6 +195,7 @@ button {
     text-transform: uppercase;
     position: relative;
     color: var(--color-white);
+    white-space: nowrap;
 }
 
 .nav-link::after {
@@ -217,10 +219,17 @@ button {
     gap: 2rem;
 }
 
+.header-tools {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
 .btn-link {
     font-size: 0.875rem;
     font-weight: 500;
     color: var(--color-white);
+    white-space: nowrap;
 }
 
 .btn-login {
@@ -356,8 +365,35 @@ button {
     display: block;
 }
 
-.lang-toggle {
+.hero-social {
     margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+}
+
+.hero-social-item {
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid rgba(252, 233, 210, 0.55);
+    background: rgba(135, 51, 85, 0.35);
+    color: var(--color-white);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.hero-social-item:hover {
+    transform: translateY(-2px);
+    background: rgba(242, 130, 102, 0.6);
+    border-color: rgba(242, 130, 102, 0.75);
+}
+
+.lang-toggle {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -368,8 +404,7 @@ button {
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0;
 }
 
 .lang-btn {
@@ -516,6 +551,11 @@ button {
 .audience-lottie dotlottie-player {
     width: clamp(120px, 24vw, 180px);
     height: clamp(120px, 24vw, 180px);
+}
+
+.audience-lottie--large dotlottie-player {
+    width: clamp(160px, 32vw, 260px);
+    height: clamp(160px, 32vw, 260px);
 }
 
 .audience-lottie-caption {
@@ -878,6 +918,35 @@ button {
     margin: 2rem 0;
 }
 
+.about-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.about-social-item {
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid rgba(135, 51, 85, 0.2);
+    background: rgba(252, 233, 210, 0.9);
+    color: var(--color-plum);
+    box-shadow: 0 8px 18px rgba(135, 51, 85, 0.12);
+    transition: transform var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.about-social-item:hover {
+    transform: translateY(-2px);
+    background: rgba(242, 130, 102, 0.25);
+    border-color: rgba(242, 130, 102, 0.45);
+}
+
 .btn-primary {
     display: inline-block;
     padding: 1rem 2.5rem;
@@ -893,6 +962,28 @@ button {
 .btn-primary:hover {
     opacity: 1;
     transform: scale(1.05);
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 2rem;
+    background-color: var(--color-plum);
+    color: var(--color-antique);
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 999px;
+    margin-top: 0.75rem;
+    box-shadow: 0 10px 24px rgba(135, 51, 85, 0.2);
+    transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.btn-secondary:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+    background-color: var(--color-accent);
+    color: var(--color-plum);
 }
 
 .services-grid {
@@ -1071,6 +1162,48 @@ button {
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+    .header .container {
+        padding: 0 1.5rem;
+    }
+
+    .logo-main {
+        font-size: 1rem;
+        letter-spacing: 0.12em;
+    }
+
+    .nav-list {
+        gap: 1.75rem;
+    }
+
+    .nav-link {
+        font-size: 0.8rem;
+        letter-spacing: 0.04em;
+    }
+
+    .header-actions {
+        gap: 1rem;
+    }
+
+    .btn-link {
+        font-size: 0.8rem;
+    }
+
+    .header-tools {
+        gap: 0.85rem;
+    }
+
+    .lang-toggle {
+        padding: 0.3rem;
+    }
+
+    .lang-btn {
+        min-width: 48px;
+        padding: 0.35rem 0.5rem;
+        font-size: 0.8rem;
+    }
+}
+
 @media (max-width: 1024px) {
     .creators-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1082,6 +1215,12 @@ button {
         --header-height: 70px;
         --spacing-xl: 4rem;
         --spacing-xxl: 5rem;
+    }
+
+    .logo-main {
+        font-size: 0.9rem;
+        letter-spacing: 0.12em;
+        white-space: nowrap;
     }
 
     .nav,
@@ -1136,6 +1275,19 @@ button {
         gap: 2rem;
     }
 
+    .footer-content {
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-nav-list {
+        align-items: center;
+    }
+
     .footer-bottom {
         flex-direction: column;
         text-align: center;
@@ -1155,6 +1307,11 @@ button {
     .container,
     .container-wide {
         padding: 0 1rem;
+    }
+
+    .logo-main {
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
     }
 
     .hero-title {

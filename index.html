@@ -35,16 +35,27 @@
                     </ul>
                 </nav>
 
-                <div class="header-actions">
-                    <a href="#contact" class="btn-link" data-i18n="nav.contact">Kontakta oss</a>
-                    <a href="#login" class="btn-login" data-i18n="nav.login">Logga in</a>
-                </div>
+                <div class="header-tools">
+                    <div class="header-actions">
+                        <a href="#contact" class="btn-link" data-i18n="nav.contact">Kontakta oss</a>
+                    </div>
+                    <div class="lang-toggle" aria-label="Välj språk">
+                        <button class="lang-btn is-active" type="button" data-lang="sv" aria-pressed="true">
+                            <span role="img" aria-hidden="true">🇸🇪</span>
+                            <span class="sr-only">Svenska</span>
+                        </button>
+                        <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">
+                            <span role="img" aria-hidden="true">🇬🇧</span>
+                            <span class="sr-only">English</span>
+                        </button>
+                    </div>
 
-                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
@@ -57,7 +68,6 @@
                 <li><a href="#about" class="mobile-nav-link" data-i18n="nav.about">OM OSS</a></li>
                 <li><a href="#apply" class="mobile-nav-link" data-i18n="nav.apply">ANSÖK NU</a></li>
                 <li><a href="#contact" class="mobile-nav-link" data-i18n="nav.contact">Kontakta oss</a></li>
-                <li><a href="#login" class="mobile-nav-link" data-i18n="nav.login">Logga in</a></li>
             </ul>
         </nav>
     </div>
@@ -65,7 +75,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <video class="hero-video" id="heroVideo" autoplay muted playsinline>
-            <source src="pushit1.mp4" type="video/mp4">
+            <source src="pushit3.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
         <div class="container">
@@ -73,16 +83,22 @@
                 <span class="hero-title-line">You create.</span>
                 <span class="hero-title-line">We push it.</span>
             </h1>
-            <div class="lang-toggle" aria-label="Välj språk">
-                <button class="lang-btn is-active" type="button" data-lang="sv" aria-pressed="true">
-                    <span role="img" aria-hidden="true">🇸🇪</span>
-                    <span class="sr-only">Svenska</span>
-                </button>
-                <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">
-                    <span role="img" aria-hidden="true">🇬🇧</span>
-                    <span class="sr-only">English</span>
-                </button>
-            </div>
+            <ul class="hero-social" aria-label="Sociala medier">
+                <li class="hero-social-item">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+                    </svg>
+                    <span class="sr-only">TikTok</span>
+                </li>
+                <li class="hero-social-item">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                    <span class="sr-only">Instagram</span>
+                </li>
+            </ul>
         </div>
     </section>
 
@@ -117,7 +133,7 @@
                                 <div class="audience-list-text" data-i18n="audience.creators.money">Tjäna pengar på din
                                     kreativitet</div>
                                 <div class="audience-lottie" aria-hidden="true">
-                                    <dotlottie-player src="Money.lottie" background="transparent" speed="1" loop
+                                    <dotlottie-player src="assets/Lotti/Shake-Hands.lottie" background="transparent" speed="1" loop
                                         autoplay></dotlottie-player>
                                 </div>
                                 <p class="audience-lottie-caption" data-i18n="audience.creators.caption">Gör ditt
@@ -141,9 +157,19 @@
                     <div class="audience-panel" role="tabpanel" tabindex="0" id="audience-panel-companies"
                         aria-labelledby="audience-tab-companies" hidden data-audience-panel="companies">
                         <ul class="audience-list">
-                            <li data-i18n="audience.companies.get">Hitta rätt influencer och marknadsför dina produkter
+                            <li>
+                                <div class="audience-list-text" data-i18n="audience.companies.get">Hitta rätt influencer
+                                    och marknadsför dina produkter</div>
+                                <div class="audience-lottie audience-lottie--large" aria-hidden="true">
+                                    <dotlottie-player src="assets/Lotti/influencer.lottie" background="transparent"
+                                        speed="1" loop autoplay></dotlottie-player>
+                                </div>
                             </li>
-                            <li data-i18n="audience.companies.contact">Kontakta oss för mer info</li>
+                            <li>
+                                <div class="audience-list-text" data-i18n="audience.companies.contact">Kontakta oss för
+                                    mer info</div>
+                                <a href="#contact" class="btn-secondary" data-i18n="audience.companies.cta">Boka nu</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -225,41 +251,6 @@
         </div>
     </section>
 
-    <!-- Sponsors Section -->
-    <section class="sponsors fade-in-scroll" id="sponsors">
-        <div class="container">
-            <h2 class="section-title" data-i18n="sponsors.title">SPONSORER</h2>
-            <p class="section-subtitle" data-i18n="sponsors.subtitle">Varumärken vi samarbetat med</p>
-        </div>
-
-        <div class="clients-marquee" aria-label="Sponsorer loggor i loop" data-i18n-label="sponsors.aria">
-            <div class="clients-track">
-                <div class="client-logo"><img src="logoloop/Airbnb%20copy.svg" alt="Airbnb"></div>
-                <div class="client-logo"><img src="logoloop/Amazon%20copy.svg" alt="Amazon"></div>
-                <div class="client-logo"><img src="logoloop/Disney%20copy.svg" alt="Disney"></div>
-                <div class="client-logo"><img src="logoloop/Google%20copy.svg" alt="Google"></div>
-                <div class="client-logo"><img src="logoloop/Microsoft%20copy.svg" alt="Microsoft"></div>
-                <div class="client-logo"><img src="logoloop/Netflix%20copy.svg" alt="Netflix"></div>
-                <div class="client-logo"><img src="logoloop/Nike%20copy.svg" alt="Nike"></div>
-                <div class="client-logo"><img src="logoloop/Spotify%20copy.svg" alt="Spotify"></div>
-                <div class="client-logo"><img src="logoloop/TikTok%20copy.svg" alt="TikTok"></div>
-                <div class="client-logo"><img src="logoloop/Uber%20copy.svg" alt="Uber"></div>
-
-                <!-- Duplicate for seamless loop -->
-                <div class="client-logo"><img src="logoloop/Airbnb%20copy.svg" alt="Airbnb"></div>
-                <div class="client-logo"><img src="logoloop/Amazon%20copy.svg" alt="Amazon"></div>
-                <div class="client-logo"><img src="logoloop/Disney%20copy.svg" alt="Disney"></div>
-                <div class="client-logo"><img src="logoloop/Google%20copy.svg" alt="Google"></div>
-                <div class="client-logo"><img src="logoloop/Microsoft%20copy.svg" alt="Microsoft"></div>
-                <div class="client-logo"><img src="logoloop/Netflix%20copy.svg" alt="Netflix"></div>
-                <div class="client-logo"><img src="logoloop/Nike%20copy.svg" alt="Nike"></div>
-                <div class="client-logo"><img src="logoloop/Spotify%20copy.svg" alt="Spotify"></div>
-                <div class="client-logo"><img src="logoloop/TikTok%20copy.svg" alt="TikTok"></div>
-                <div class="client-logo"><img src="logoloop/Uber%20copy.svg" alt="Uber"></div>
-            </div>
-        </div>
-    </section>
-
     <!-- Collaborations Section -->
     <section class="collaborations fade-in-scroll">
         <div class="container">
@@ -274,92 +265,39 @@
                 <!-- Collaboration Item 1 -->
                 <div class="collaboration-item">
                     <div class="collaboration-image">
-                        <img src="assets/images/collab-1.jpg" alt="Moei Al Debis">
+                        <img src="assets/partners/partner1.jpeg" alt="Partner 1">
                         <div class="collaboration-overlay">
                             <span class="collaboration-x">X</span>
                             <span class="collaboration-cta" data-i18n="creator.view">Visa profil</span>
                         </div>
                     </div>
-                    <p class="collaboration-name">MOEI AL DEBIS</p>
+                    <p class="collaboration-name">HENRIK THE FREAK</p>
                 </div>
 
                 <!-- Collaboration Item 2 -->
                 <div class="collaboration-item">
                     <div class="collaboration-image">
-                        <img src="assets/images/collab-2.jpg" alt="Emelie Von Hofsten">
+                        <img src="assets/partners/partner2.jpeg" alt="Partner 2">
                         <div class="collaboration-overlay">
                             <span class="collaboration-x">X</span>
                             <span class="collaboration-cta" data-i18n="creator.view">Visa profil</span>
                         </div>
                     </div>
-                    <p class="collaboration-name">EMELIE VON HOFSTEN</p>
+                    <p class="collaboration-name">ULLA-BRITTA</p>
                 </div>
 
                 <!-- Collaboration Item 4 -->
                 <div class="collaboration-item">
                     <div class="collaboration-image">
-                        <img src="assets/images/collab-4.jpg" alt="Kajsa Larsson">
+                        <img src="assets/partners/partner3.jpeg" alt="Partner 3">
                         <div class="collaboration-overlay">
                             <span class="collaboration-x">X</span>
                             <span class="collaboration-cta" data-i18n="creator.view">Visa profil</span>
                         </div>
                     </div>
-                    <p class="collaboration-name">KAJSA LARSSON</p>
+                    <p class="collaboration-name">TOMMY MOMSEN</p>
                 </div>
 
-                <!-- Collaboration Item 5 -->
-                <div class="collaboration-item">
-                    <div class="collaboration-image">
-                        <img src="assets/images/collab-5.jpg" alt="Louisa Falkenberg">
-                        <div class="collaboration-overlay">
-                            <span class="collaboration-x">X</span>
-                            <span class="collaboration-cta" data-i18n="creator.view">Visa profil</span>
-                        </div>
-                    </div>
-                    <p class="collaboration-name">LOUISA FALKENBERG</p>
-                </div>
-
-                <!-- Collaboration Item 6 -->
-                <div class="collaboration-item">
-                    <div class="collaboration-image">
-                        <img src="assets/images/collab-6.jpg" alt="Modell 1">
-                        <div class="collaboration-overlay">
-                            <span class="collaboration-x">X</span>
-                            <span class="collaboration-cta" data-i18n="creator.view">Visa profil</span>
-                        </div>
-                    </div>
-                    <p class="collaboration-name">MODELL 1</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Clients Section -->
-    <section class="clients fade-in-scroll">
-        <div class="container">
-            <h2 class="section-title" data-i18n="clients.title">VÅRA KUNDER</h2>
-            <p class="section-subtitle" data-i18n="clients.subtitle">Våra senaste partners</p>
-        </div>
-
-        <div class="clients-marquee">
-            <div class="clients-track">
-                <div class="client-logo"><img src="assets/images/client-1.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
-                <div class="client-logo"><img src="assets/images/client-2.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
-                <div class="client-logo"><img src="assets/images/client-3.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
-                <div class="client-logo"><img src="assets/images/client-4.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
-                <div class="client-logo"><img src="assets/images/client-5.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
-                <div class="client-logo"><img src="assets/images/client-6.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
-                <div class="client-logo"><img src="assets/images/client-7.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
-                <div class="client-logo"><img src="assets/images/client-8.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
-                <!-- Duplicate for seamless loop -->
-                <div class="client-logo"><img src="assets/images/client-1.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
-                <div class="client-logo"><img src="assets/images/client-2.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
-                <div class="client-logo"><img src="assets/images/client-3.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
-                <div class="client-logo"><img src="assets/images/client-4.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
-                <div class="client-logo"><img src="assets/images/client-5.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
-                <div class="client-logo"><img src="assets/images/client-6.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
-                <div class="client-logo"><img src="assets/images/client-7.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
-                <div class="client-logo"><img src="assets/images/client-8.png" data-i18n-alt="clients.alt" alt="Kundlogotyp"></div>
             </div>
         </div>
     </section>
@@ -372,6 +310,24 @@
                     <p class="what-we-do-intro" data-i18n="what.body">PUSH IT är en dedikerad byrå som uteslutande representerar svenska
                     influencers inom mode, inredning, skönhet och sport. Vi säkerställer högt engagemang och
                     innehåll av toppkvalitet.</p>
+                    <p class="what-we-do-intro">Push it är en talang och marknadsförings byrå medveriges största pool av micro influenser. Vi väljer och värnar våra talanger om omsorg för att sedan matcha dom med rätt företag. Vi står också för gränslös marknadsföring, vi är inte som alla andra går den extra milen för att synas och höras!</p>
+                    <p class="what-we-do-email">E-post: <a href="mailto:hello@pushitagency.se">hello@pushitagency.se</a></p>
+                <ul class="about-social" aria-label="Sociala medier">
+                    <li class="about-social-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+                        </svg>
+                        <span class="sr-only">TikTok</span>
+                    </li>
+                    <li class="about-social-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                        <span class="sr-only">Instagram</span>
+                    </li>
+                </ul>
                 <a href="#about" class="btn-primary" data-i18n="what.cta">Om oss</a>
             </div>
 
@@ -392,6 +348,12 @@
                     <h3 class="service-title" data-i18n="services.3.title">Brett nätverk</h3>
                     <p class="service-description" data-i18n="services.3.desc">PUSH IT kopplar ihop dig med ledande kunder inom mode, sport,
                         skönhet, inredning och mat, och breddar dina möjligheter till samarbeten.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3 class="service-title" data-i18n="services.4.title">Strategi & kampanjplanering</h3>
+                    <p class="service-description" data-i18n="services.4.desc">Vi tar fram tydliga mål, kreativa koncept och tajta tidslinjer så att
+                        varje kampanj levererar maximalt genomslag.</p>
                 </div>
             </div>
         </div>
@@ -428,7 +390,6 @@
                             <li><a href="#about" data-i18n="nav.about">OM OSS</a></li>
                             <li><a href="#apply" data-i18n="nav.apply">ANSÖK NU</a></li>
                             <li><a href="#contact" data-i18n="nav.contact">KONTAKT</a></li>
-                            <li><a href="#login" data-i18n="nav.login">LOGGA IN</a></li>
                         </ul>
                     </nav>
                 </div>
